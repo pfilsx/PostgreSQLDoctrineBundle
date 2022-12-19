@@ -5,7 +5,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="pfilsx.postgresql_doctrine_bundle.schema_provider" class="Pfilsx\PostgreSQLDoctrine\Migrations\Provider\SchemaProvider">
+        <service id="pfilsx.postgresql_doctrine_bundle.schema_provider" class="Pfilsx\PostgreSQLDoctrine\Migrations\Provider\OrmSchemaProvider">
             <argument/>
         </service>
 
