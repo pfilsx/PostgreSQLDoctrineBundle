@@ -3,7 +3,6 @@
 <container xmlns="http://symfony.com/schema/dic/services"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-
     <services>
         <service id="pfilsx.postgresql_doctrine_bundle.schema_provider" class="Pfilsx\PostgreSQLDoctrine\Migrations\Provider\OrmSchemaProvider">
             <argument/>
@@ -11,6 +10,12 @@
 
         <service id="pfilsx.postgresql_doctrine_bundle.driver_middleware" class="Pfilsx\PostgreSQLDoctrine\DBAL\Middleware\PostgreSQLDriverMiddleware">
             <tag name="doctrine.middleware"/>
+        </service>
+
+        <service id="pfilsx.postgresql_doctrine_bundle.connection_wrapper" class="Pfilsx\PostgreSQLDoctrineBundle\JsonModelConnectionFactoryWrapper">
+            <argument type="service" id=".inner"/>
+            <argument/>
+            <argument type="service" id="serializer.normalizer.object" on-invalid="null"/>
         </service>
     </services>
 </container>

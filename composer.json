@@ -15,11 +15,13 @@
         "symfony/framework-bundle": "^6.2",
         "doctrine/dbal": "^3.5",
         "doctrine/migrations": "^3.5",
-        "pfilsx/postgresql-doctrine": "^1.0"
+        "doctrine/doctrine-bundle": "^2.8",
+        "pfilsx/postgresql-doctrine": "^1.2"
     },
     "require-dev": {
         "doctrine/orm": "^2.13",
-        "friendsofphp/php-cs-fixer": "^3.13"
+        "friendsofphp/php-cs-fixer": "^3.13",
+        "symfony/serializer": ">=5.4"
     },
     "autoload": {
         "psr-4": {
