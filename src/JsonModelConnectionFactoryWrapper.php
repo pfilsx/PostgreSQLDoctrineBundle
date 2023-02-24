@@ -9,17 +9,18 @@ use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\Connection;
 use Pfilsx\PostgreSQLDoctrine\DBAL\Type\JsonModelTypeRegistry;
+use Symfony\Component\Serializer\Debug\TraceableNormalizer;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 
 class JsonModelConnectionFactoryWrapper
 {
     private ConnectionFactory $innerFactory;
     private array $typesMap;
-    private ?AbstractObjectNormalizer $objectNormalizer;
+    private null|AbstractObjectNormalizer|TraceableNormalizer $objectNormalizer;
 
     private bool $initialized = false;
 
-    public function __construct(ConnectionFactory $innerFactory, array $typesMap = [], ?AbstractObjectNormalizer $objectNormalizer = null)
+    public function __construct(ConnectionFactory $innerFactory, array $typesMap = [], null|AbstractObjectNormalizer|TraceableNormalizer $objectNormalizer = null)
     {
         $this->innerFactory = $innerFactory;
         $this->typesMap = $typesMap;
