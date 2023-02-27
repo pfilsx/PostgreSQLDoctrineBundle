@@ -12,7 +12,7 @@ use Pfilsx\PostgreSQLDoctrine\DBAL\Type\JsonModelTypeRegistry;
 use Symfony\Component\Serializer\Debug\TraceableNormalizer;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 
-class JsonModelConnectionFactoryWrapper
+class JsonModelConnectionFactoryDecorator extends ConnectionFactory
 {
     private ConnectionFactory $innerFactory;
     private array $typesMap;
@@ -42,7 +42,7 @@ class JsonModelConnectionFactoryWrapper
             JsonModelTypeRegistry::setObjectNormalizer($this->objectNormalizer);
         }
         foreach ($this->typesMap as $name => $className) {
-            JsonModelTypeRegistry::addType($name, $className);
+            JsonModelTypeRegistry::addType($name, $className, true);
         }
 
         JsonModelTypeRegistry::registerTypes();

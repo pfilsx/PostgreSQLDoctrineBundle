@@ -36,14 +36,13 @@ final class JsonModelCompilerPass implements CompilerPassInterface
         }
 
         if (count($types) === 0) {
-            $container->removeDefinition('pfilsx.postgresql_doctrine_bundle.connection_wrapper');
+            $container->removeDefinition('pfilsx.postgresql_doctrine_bundle.connection_decorator');
 
             return;
         }
 
-        $connectionWrapperDef = $container->getDefinition('pfilsx.postgresql_doctrine_bundle.connection_wrapper');
+        $connectionWrapperDef = $container->getDefinition('pfilsx.postgresql_doctrine_bundle.connection_decorator');
         $connectionWrapperDef
-            ->setDecoratedService('doctrine.dbal.connection_factory')
             ->setArgument(1, $types)
         ;
     }

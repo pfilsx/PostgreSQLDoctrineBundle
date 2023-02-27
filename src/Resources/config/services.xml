@@ -12,7 +12,7 @@
             <tag name="doctrine.middleware"/>
         </service>
 
-        <service id="pfilsx.postgresql_doctrine_bundle.connection_wrapper" class="Pfilsx\PostgreSQLDoctrineBundle\JsonModelConnectionFactoryWrapper">
+        <service id="pfilsx.postgresql_doctrine_bundle.connection_decorator" decorates="doctrine.dbal.connection_factory" class="Pfilsx\PostgreSQLDoctrineBundle\JsonModelConnectionFactoryDecorator">
             <argument type="service" id=".inner"/>
             <argument/>
             <argument type="service" id="serializer.normalizer.object" on-invalid="null"/>
