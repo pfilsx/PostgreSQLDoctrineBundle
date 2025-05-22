@@ -16,7 +16,7 @@
         "doctrine/dbal": "^3.5",
         "doctrine/migrations": "^3.5",
         "doctrine/doctrine-bundle": "^2.8",
-        "pfilsx/postgresql-doctrine": "^1.2"
+        "pfilsx/postgresql-doctrine": "*"
     },
     "require-dev": {
         "doctrine/orm": "^2.13",
