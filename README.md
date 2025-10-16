@@ -13,9 +13,9 @@ Features
 Requirement
 -----------
 * PHP ^8.1
-* doctrine/dbal ^3.5.1
+* doctrine/dbal ^3.5.1|^4.0
 * doctrine/migrations ^3.5.2
-* doctrine/doctrine-bundle ^2.8
+* doctrine/doctrine-bundle ^2.8|^3.0
 * symfony/serializer >=5.4 (optional)
 
 Installation
